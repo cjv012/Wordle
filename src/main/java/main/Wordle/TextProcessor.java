@@ -87,8 +87,8 @@ public class TextProcessor {
         String word = scnr.next();
         while(true == scnr.hasNext()) {
             word = scnr.next();
-            word = word.replaceAll("[”“'',.?!;()]","");
             totalWords += 1;
+            word = word.replaceAll("[”“'',.?!;()]","");
             if (word.length() == 5 && word.matches("[a-z]+") && word_list.containsKey(word) == false) {
                 totalGoodWords += 1;
                 totalUniqueWords += 1;
@@ -111,5 +111,9 @@ public class TextProcessor {
         System.out.println("Most frequently occurring word");
         String word_name = Collections.max(word_list.entrySet(), (entry1, entry2) -> entry1.getValue() - entry2.getValue()).getKey(); //borrowed from: https://stackoverflow.com/questions/5911174/finding-key-associated-with-max-value-in-a-java-map
         System.out.println(word_name + " : " + word_list.get(word_name));
+    }
+
+    public Map<String, Integer> getWord_list() {
+        return word_list;
     }
 }

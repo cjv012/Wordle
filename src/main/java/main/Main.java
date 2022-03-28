@@ -19,11 +19,12 @@
 package main;
 
 import main.Wordle.TextProcessor;
+import main.Wordle.WordDictionary;
 
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        TextProcessor item = new TextProcessor();
+        WordDictionary item = new WordDictionary();
     }
 }
