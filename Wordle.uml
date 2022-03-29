@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.Wordle</OriginalElement>
+  <nodes>
+    <node x="254.49999999999994" y="250.0">main.Wordle.GuessEvaluator</node>
+    <node x="456.49999999999994" y="0.0">main.Wordle.TextProcessor</node>
+    <node x="230.99999999999994" y="510.0">main.Wordle.Wordle</node>
+    <node x="503.5" y="227.0">main.Wordle.WordDictionary</node>
+    <node x="10.499999999999943" y="286.5">main.Wordle.GameState</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.Wordle.WordDictionary" target="main.Wordle.TextProcessor" relationship="CREATE">
+      <point x="-60.5" y="-110.5" />
+      <point x="564.0" y="201.0" />
+      <point x="582.5" y="201.0" />
+      <point x="0.0" y="87.5" />
+    </edge>
+    <edge source="main.Wordle.Wordle" target="main.Wordle.TextProcessor" relationship="DEPENDENCY">
+      <point x="-89.0" y="-85.5" />
+      <point x="275.49999999999994" y="489.0" />
+      <point x="78.9829545454545" y="489.0" />
+      <point x="78.9829545454545" y="479.0" />
+      <point x="0.0" y="479.0" />
+      <point x="0.0" y="201.0" />
+      <point x="498.49999999999994" y="201.0" />
+      <point x="-84.0" y="87.5" />
+    </edge>
+    <edge source="main.Wordle.Wordle" target="main.Wordle.GameState" relationship="DEPENDENCY">
+      <point x="-89.0" y="-85.5" />
+      <point x="275.49999999999994" y="489.0" />
+      <point x="78.9829545454545" y="489.0" />
+      <point x="78.9829545454545" y="479.0" />
+      <point x="66.49999999999994" y="479.0" />
+      <point x="-56.0" y="51.0" />
+    </edge>
+    <edge source="main.Wordle.Wordle" target="main.Wordle.WordDictionary" relationship="CREATE">
+      <point x="89.0" y="-85.5" />
+      <point x="453.49999999999994" y="489.0" />
+      <point x="624.2329545454545" y="489.0" />
+      <point x="624.2329545454545" y="469.0" />
+      <point x="685.0" y="469.0" />
+      <point x="60.5" y="110.5" />
+    </edge>
+    <edge source="main.Wordle.WordDictionary" target="main.Wordle.TextProcessor" relationship="TO_ONE">
+      <point x="60.5" y="-110.5" />
+      <point x="685.0" y="201.0" />
+      <point x="666.5" y="201.0" />
+      <point x="84.0" y="87.5" />
+    </edge>
+    <edge source="main.Wordle.Wordle" target="main.Wordle.GuessEvaluator" relationship="TO_ONE">
+      <point x="0.0" y="-85.5" />
+      <point x="364.49999999999994" y="489.0" />
+      <point x="358.7329545454545" y="489.0" />
+      <point x="358.7329545454545" y="479.0" />
+      <point x="311.74999999999994" y="479.0" />
+      <point x="-57.25" y="87.5" />
+    </edge>
+    <edge source="main.Wordle.Wordle" target="main.Wordle.GameState" relationship="TO_ONE">
+      <point x="0.0" y="-85.5" />
+      <point x="364.49999999999994" y="489.0" />
+      <point x="358.7329545454545" y="489.0" />
+      <point x="358.7329545454545" y="479.0" />
+      <point x="178.49999999999994" y="479.0" />
+      <point x="56.0" y="51.0" />
+    </edge>
+    <edge source="main.Wordle.Wordle" target="main.Wordle.GuessEvaluator" relationship="CREATE">
+      <point x="89.0" y="-85.5" />
+      <point x="453.49999999999994" y="489.0" />
+      <point x="624.2329545454545" y="489.0" />
+      <point x="624.2329545454545" y="469.0" />
+      <point x="426.24999999999994" y="469.0" />
+      <point x="57.25" y="87.5" />
+    </edge>
+    <edge source="main.Wordle.Wordle" target="main.Wordle.WordDictionary" relationship="TO_ONE">
+      <point x="0.0" y="-85.5" />
+      <point x="364.49999999999994" y="489.0" />
+      <point x="358.7329545454545" y="489.0" />
+      <point x="358.7329545454545" y="479.0" />
+      <point x="564.0" y="479.0" />
+      <point x="-60.5" y="110.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.43366619115549215" showDependencies="true" x="373.0" y="340.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
