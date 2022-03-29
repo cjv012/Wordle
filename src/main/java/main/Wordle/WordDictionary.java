@@ -57,6 +57,15 @@ public class WordDictionary {
     }
 
     /**
+     * Generates the usedWord.txt file for all of the used already used within the Wordle game
+     * @throws IOException - exception for invalid URLs inputted for the reader object
+     */
+    public void generateUsedWordsTxt() throws IOException {
+        Files.write(Paths.get("usedWords.txt"), usedWords);
+    }
+
+
+    /**
      * This method take a given word from the list of valid words and ensures that it has not already been selected
      * @return String - the string of the word to be returned
      */

@@ -83,7 +83,7 @@ public class Wordle {
             item.generateWordsTxt();
             item.getWordList().print_report();
         } else {
-            System.out.printf("Would you like to delete word.txt and regenerate it? [Y/N]: ");
+            System.out.printf("Would you like to delete words.txt and regenerate it? [Y/N]: ");
             String deleteString = scnr.nextLine();
             if (deleteString.equals("Y")) {
                 deleteWordsTxt();
@@ -92,19 +92,24 @@ public class Wordle {
                 item.getWordList().print_report();
             }
         }
+        System.out.printf("Would you like to delete usedWords.txt? [Y/N]: ");
+        String UsedDeleteString = scnr.nextLine();
+        if (UsedDeleteString.equals("Y")) {
+            deleteUsedWordsTxt();
+        }
+
     }
 
     /**
      * Method initializes a game and then calls on the gameplay operator and the endGame operators to complete the construction
      */
-    public void initGame() {
+    public void initGame() throws IOException {
         if (gameState == GameState.NEW_GAME) {
             String userGuess;
             String guessResult;
             System.out.println("Ready to play Wordle! You have 6 guesses!");
             gameState = GameState.GAME_IN_PROCESS;
             String wordSelect = item.selectWord();
-            item.getUsedWords().add(wordSelect);
             guesser.setSecretWord(wordSelect);
             Scanner scnr = new Scanner(System.in);
             gamePlayOperator(scnr);
@@ -146,13 +151,14 @@ public class Wordle {
      * may make a call to start another game depending on the response from the user
      * @param scnr - scanner object to take in the user's response
      */
-    private void endOfGame(Scanner scnr) {
+    private void endOfGame(Scanner scnr) throws IOException {
         if (gameState == GameState.GAME_IN_PROCESS) {
             gameState = GameState.GAME_LOSER;
         }
         System.out.printf("Would you like to play again? [Y/N]: ");
         String playAgain = scnr.nextLine();
         gameState = GameState.NEW_GAME;
+        item.generateUsedWordsTxt();
         if (playAgain.equals("Y") == true) {
             System.out.println("");
             initGame();
@@ -166,6 +172,15 @@ public class Wordle {
      */
     public void deleteWordsTxt() {
         String filename = "words.txt";
+        File fileObject = new File(filename);
+        fileObject.delete();
+    }
+
+    /**
+     * Method to delete the usedWords.txt file
+     */
+    public void deleteUsedWordsTxt() {
+        String filename = "usedWords.txt";
         File fileObject = new File(filename);
         fileObject.delete();
     }
