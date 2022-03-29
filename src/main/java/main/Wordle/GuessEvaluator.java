@@ -12,7 +12,8 @@
  * Package: main.Wordle
  * Class: GuessEvaluator
  *
- * Description:
+ * Description: This module works to set the secret word, check whether a guess is valid to be entered,
+ * and to evaluate that guess, returning a feedback string
  *
  * ****************************************
  */
