@@ -12,7 +12,9 @@
  * Package: main.Wordle
  * Class: Wordle
  *
- * Description:
+ * Description: This file encapsulates the functionality of the entire Wordle program by bringing together
+ * all of the functionality of generating a list of viable words, creating a wordle game, and checking
+ * guesses to see if they are correct
  *
  * ****************************************
  */
