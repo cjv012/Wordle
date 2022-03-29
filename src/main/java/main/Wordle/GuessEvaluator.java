@@ -18,6 +18,9 @@
  */
 package main.Wordle;
 
+/**
+ * A simple class to encapsulate the guess evaluation process for Wordle
+ */
 public class GuessEvaluator {
 
     /**
@@ -65,5 +68,12 @@ public class GuessEvaluator {
 
     public String getSecrectWord() {
         return secrectWord;
+    }
+
+    public boolean validGuess(String guess) {
+        if (guess.length() == 5 && guess.matches("[a-z]+")) {
+            return true;
+        }
+        return false;
     }
 }

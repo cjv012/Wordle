@@ -12,7 +12,8 @@
  * Package: main.Wordle
  * Class: TextProcessor
  *
- * Description:
+ * Description: This method takes in the words from various books and inserts them a map that stores them and
+ * their frequency of occurence
  *
  * ****************************************
  */
@@ -58,6 +59,15 @@ public class TextProcessor {
         totalWords = 0;
         totalGoodWords = 0;
         totalUniqueWords = 0;
+        storeBookWords();
+
+    }
+
+    /**
+     * The method takes in all of the URLs from the user and stores their contents into the word_lis object
+     * @throws IOException - exception for if a faulty URL is inputted
+     */
+    private void storeBookWords() throws IOException {
         System.out.printf("-Reading in Pride and Prejudice by Jane Austen......");
         URLReader("https://www.gutenberg.org/files/1342/1342-0.txt");
         System.out.printf("done\n");
@@ -70,8 +80,6 @@ public class TextProcessor {
         System.out.printf("-Reading in The Great Gatsby by Scott F. Fitzgerald......");
         URLReader("https://www.gutenberg.org/files/2701/2701-0.txt");
         System.out.printf("done\n");
-        print_report();
-
     }
 
     /**
@@ -108,9 +116,9 @@ public class TextProcessor {
         System.out.println("Total number of words processed: " + totalWords);
         System.out.println("Total number of words kept: " + totalGoodWords);
         System.out.println("Number of unique words: " + totalUniqueWords);
-        System.out.println("Most frequently occurring word");
-        String word_name = Collections.max(word_list.entrySet(), (entry1, entry2) -> entry1.getValue() - entry2.getValue()).getKey(); //borrowed from: https://stackoverflow.com/questions/5911174/finding-key-associated-with-max-value-in-a-java-map
-        System.out.println(word_name + " : " + word_list.get(word_name));
+        //System.out.println("Most frequently occurring word");
+        //String word_name = Collections.max(word_list.entrySet(), (entry1, entry2) -> entry1.getValue() - entry2.getValue()).getKey(); //borrowed from: https://stackoverflow.com/questions/5911174/finding-key-associated-with-max-value-in-a-java-map
+        //System.out.println(word_name + " : " + word_list.get(word_name));
     }
 
     public Map<String, Integer> getWord_list() {

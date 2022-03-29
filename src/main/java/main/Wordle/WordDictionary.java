@@ -12,7 +12,8 @@
  * Package: main.Wordle
  * Class: WordDictionary
  *
- * Description:
+ * Description: This method takes the existing word_list of items and creates a words.txt file and offers
+ * the ability to check whether a word is located within that file or select a word from among that file
  *
  * ****************************************
  */
@@ -23,6 +24,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+/**
+ * A simple class to generate a word text file and select words for use in the wordle game
+ */
 public class WordDictionary {
 
     /**
@@ -42,8 +46,6 @@ public class WordDictionary {
     public WordDictionary() throws IOException {
         wordList = new TextProcessor();
         usedWords = new ArrayList<>();
-        generateWordsTxt();
-        System.out.println(selectWord());
     }
 
     /**
@@ -83,5 +85,13 @@ public class WordDictionary {
             return true;
         }
         return false;
+    }
+
+    public TextProcessor getWordList() {
+        return wordList;
+    }
+
+    public ArrayList<String> getUsedWords() {
+        return usedWords;
     }
 }

@@ -21,16 +21,13 @@ package main;
 import main.Wordle.GuessEvaluator;
 import main.Wordle.TextProcessor;
 import main.Wordle.WordDictionary;
+import main.Wordle.Wordle;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        WordDictionary item = new WordDictionary();
-        GuessEvaluator guesser = new GuessEvaluator();
-        String word = item.selectWord();
-        System.out.println(word);
-        guesser.setSecretWord(word);
-        System.out.println(guesser.analyzeGuess("hello"));
+        Wordle wordleGame = new Wordle();
     }
 }
